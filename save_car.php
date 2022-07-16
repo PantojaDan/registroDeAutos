@@ -33,8 +33,8 @@ if(!empty($_FILES["image"]["name"]) && !empty($_POST["name"]) && !empty($_POST["
     $price = formatPrice($price);
     $price = intval($price);
 
-    $query = "INSERT INTO [dbo].[Producto](descripcion, price, dislikes, likes, loves, dir_img) VALUES('$description','$price',0,0,0,'$img_dir')";
-    $stmt = sqlsrv_query($conn,$query);
+    $query = "INSERT INTO producto(descripcion, price, dislikes, likes, loves, dir_img) VALUES('$description','$price',0,0,0,'$img_dir')";
+    $stmt = mysqli_query($conn,$query);
     
     if(!$stmt){
         die("Querie failed");
