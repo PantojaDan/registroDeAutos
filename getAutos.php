@@ -18,7 +18,8 @@ while($autos = mysqli_fetch_array($result)){
         echo "\n".$autos['loves'];
         echo "\n".$autos['dir_img'];
     echo "</pre>";
-    echo  $_SERVER['REQUEST_URI'];
+    $link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    echo  $link;
 }
 
 
