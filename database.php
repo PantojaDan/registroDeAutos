@@ -12,7 +12,6 @@ try{
     echo "No Connected Database".$e->getMessage();
 }
 
-
 /*$query = "
 CREATE TABLE Producto(
 	id int NOT NULL AUTO_INCREMENT,

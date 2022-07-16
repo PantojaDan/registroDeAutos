@@ -7,7 +7,6 @@ include 'database.php';
 function moveIntoMyDir(){
     $name_image = $_FILES["image"]["name"];
     $ruta_temporal = $_FILES["image"]["tmp_name"];
-    //$ruta_a_subir = "./img/$name_image";
     $ruta_a_subir = "./$name_image";
     move_uploaded_file($ruta_temporal,$ruta_a_subir);
 }
