@@ -28,7 +28,7 @@ if(!empty($_FILES["image"]["name"]) && !empty($_POST["name"]) && !empty($_POST["
 
     $description = $_POST["name"];
     $price = $_POST["price"];
-    $img_dir = "http://$_SERVER[HTTP_HOST]/".$_FILES["image"]["name"];
+    $img_dir = "https://$_SERVER[HTTP_HOST]/".$_FILES["image"]["name"];
 
     $price = formatPrice($price);
     $price = intval($price);
