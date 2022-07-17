@@ -9,18 +9,21 @@ if(!$result){
     die("Querie failed!");
 }
 
-while($autos = mysqli_fetch_array($result)){
-    echo "<pre>";
-        echo "\n".$autos['descripcion'];
-        echo "\n".$autos['price'];
-        echo "\n".$autos['dislikes'];
-        echo "\n".$autos['likes'];
-        echo "\n".$autos['loves'];
-        echo "\n".$autos['dir_img'];
-    echo "</pre>";
-    //$link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    //echo  $link;
+$autos = [];
+
+while($row = mysqli_fetch_array($result)){
+    $auto = [
+        "id" => $row['id'],
+        "description" => $row['descripcion'],
+        "price" => $row['price'],
+        "dislikes" => $row['likes'],
+        "likes" => $row['loves'],
+        "loves" => $row['loves'],
+        "dir_img" => $row['dir_img']
+    ];
+    array_push($autos, $auto); 
 }
 
+echo  json_encode($autos);
 
 ?>
